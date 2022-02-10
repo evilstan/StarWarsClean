@@ -1,7 +1,7 @@
 package com.evilstan.starwarsclean
 
 import android.app.Application
-import com.evilstan.starwarsclean.data.database.AppDatabase
+import com.evilstan.starwarsclean.core.AppDatabase
 
 class App : Application() {
 

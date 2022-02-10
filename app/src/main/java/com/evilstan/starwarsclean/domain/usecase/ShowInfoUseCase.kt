@@ -1,12 +1,12 @@
 package com.evilstan.starwarsclean.domain.usecase
 
 import android.os.Bundle
-import com.evilstan.starwarsclean.domain.models.PersonCache
-import com.evilstan.starwarsclean.domain.repository.Repository
+import com.evilstan.starwarsclean.domain.models.PersonDomain
+import com.evilstan.starwarsclean.domain.repository.PersonRepository
 
-class ShowInfoUseCase(private val repository: Repository) {
-    fun execute(personCache: PersonCache): Bundle {
+class ShowInfoUseCase(private val personRepository: PersonRepository) {
+    fun execute(personDomain: PersonDomain): Bundle {
 
-        return repository.showInfo(personCache)
+        return personRepository.showInfo(personDomain)
     }
 }

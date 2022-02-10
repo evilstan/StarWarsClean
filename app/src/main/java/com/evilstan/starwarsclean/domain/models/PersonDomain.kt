@@ -1,11 +1,6 @@
 package com.evilstan.starwarsclean.domain.models
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
-@Entity(tableName = "persons")
-data class PersonCache(
-    @PrimaryKey
+class PersonDomain(
     val name: String,
     val height: String,
     val mass: String,

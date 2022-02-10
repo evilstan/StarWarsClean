@@ -1,7 +1,7 @@
 package com.evilstan.starwarsclean.domain.usecase
 
-import com.evilstan.starwarsclean.domain.repository.Repository
+import com.evilstan.starwarsclean.domain.repository.PersonRepository
 
-class SearchByNameUseCase(private val repository: Repository) {
-    fun execute(name: String) = repository.search(name)
+class SearchByNameUseCase(private val personRepository: PersonRepository) {
+    fun execute(name: String) = personRepository.search(name)
 }

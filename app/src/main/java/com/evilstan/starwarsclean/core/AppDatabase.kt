@@ -1,13 +1,13 @@
-package com.evilstan.starwarsclean.data.database
+package com.evilstan.starwarsclean.core
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.evilstan.starwarsclean.domain.models.PersonCache
+import com.evilstan.starwarsclean.domain.models.PersonDomain
 
-@Database(entities = [PersonCache::class], version = 1, exportSchema = false)
+@Database(entities = [PersonDomain::class], version = 1, exportSchema = false)
 @TypeConverters(DataConverter::class)
 
 abstract class AppDatabase : RoomDatabase() {

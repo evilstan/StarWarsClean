@@ -1,8 +1,8 @@
-package com.evilstan.starwarsclean.data.database
+package com.evilstan.starwarsclean.core
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.evilstan.starwarsclean.domain.models.PersonCache
+import com.evilstan.starwarsclean.data.storage.models.PersonCache
 
 @Dao
 interface PersonDao {
@@ -13,11 +13,11 @@ interface PersonDao {
     fun persons(): LiveData<List<PersonCache>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(characterCache: PersonCache)
+    suspend fun insert(personCache: PersonCache)
 
     @Update
-    fun update(characterCache: PersonCache)
+    fun update(personCache: PersonCache)
 
     @Delete
-    suspend fun delete(characterCache: PersonCache)
+    suspend fun delete(personCache: PersonCache)
 }

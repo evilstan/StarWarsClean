@@ -1,10 +1,13 @@
 package com.evilstan.starwarsclean.domain.usecase
 
-import com.evilstan.starwarsclean.domain.models.PersonCache
-import com.evilstan.starwarsclean.domain.repository.Repository
+import com.evilstan.starwarsclean.domain.models.PersonDomain
+import com.evilstan.starwarsclean.domain.repository.PersonRepository
 
-class AddToFavoritesUseCase(private val repository: Repository) {
-    fun execute(personCache: PersonCache) {
-        repository.favorite(personCache)
+class AddToFavoritesUseCase(private val personRepository: PersonRepository) {
+
+    suspend fun execute(personDomain: PersonDomain) {
+        if (personDomain.favorite) personRepository.insert(personDomain)
+        else personRepository.delete(personDomain)
     }
+
 }

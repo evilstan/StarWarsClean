@@ -1,4 +1,4 @@
-package com.evilstan.starwarsclean.data.database
+package com.evilstan.starwarsclean.core
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
